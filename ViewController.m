@@ -2,7 +2,7 @@
 //  ViewController.m
 //  rahul
 //
-//  Created by rahul raut on 5/29/17.
+//  Created by rahul raut on 5/15/17.
 //  Copyright (c) 2017 rahul raut. All rights reserved.
 //
 
@@ -28,12 +28,25 @@
 }
 
 - (IBAction)addPressed:(id)sender {
+    add= TRUE;
 }
 
 - (IBAction)minusPressed:(id)sender {
+    add= FALSE;
 }
 
 - (IBAction)equalsPressed:(id)sender {
+    if(add==false){
+    int outputNum = [firstEntry intValue] - [secondEntry intValue]
+        _lableOutput.text = [NSString stringWithFormat:@"%i",outputNum ]
+    }
+    else{
+     int outputNum = [firstEntry intValue] + [secondEntry intValue]
+        _lableOutput.text = [NSString stringWithFormat:@"%i",outputNum ]
+    }
+    operatorPressed = FALSE;
+    firstEntry = NULL;
+    secondEntry = NULL;
 }
 
 -(IBAction)numberPressed:(UIButton*)sender{
